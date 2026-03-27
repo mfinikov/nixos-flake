@@ -15,7 +15,6 @@
     ./../../modules/sudo.nix
     ./../../modules/swhkdp.nix
     ./../../modules/bluetooth.nix
-    #./../../modules/odoo.nix
     ./../../modules/greeters/regreet.nix
   ];
 

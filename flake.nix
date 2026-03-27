@@ -15,10 +15,6 @@
       url = "github:pabloaul/lsfg-vk-flake/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    aplin = {
-      url = "github:id3v1669/aplin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -73,8 +69,8 @@
   in {
     formatter.x86_64-linux = inputs.nixpkgs.legacyPackages.x86_64-linux.alejandra;
     nixosConfigurations = {
-      nuc10chhypr = mkSystem {
-        hostname = "nuc10ch";
+      allahhypr = mkSystem {
+        hostname = "allah";
         envir = "Hyprland";
         bootloader = {
           type = "opencore";
@@ -86,10 +82,10 @@
         };
         uservars = {
           name = "user";
-          description = "id3v1669";
+          description = "mfinikov";
           domain = "none";
           wp = "default3.png";
-          owner = "id3v1669";
+          owner = "mfinikov";
           sleeptimeout = 1200;
         };
         brightnesctrl = {
@@ -97,95 +93,8 @@
           down = "light -U 5";
         };
         gpuvar = {
-          type = "amd";
-          tech = "broken";
-        };
-      };
-      l14g3hypr = mkSystem {
-        hostname = "l14g3";
-        envir = "Hyprland";
-        cpuvar = {
-          type = "amd";
-          hasIntegrated = true;
-          integratedBroken = false;
-        };
-        bootloader = {
-          type = "opencore";
-          timeout = 7;
-        };
-        desk = "laptop";
-        uservars = {
-          name = "user";
-          description = "id3v1669";
-          domain = "none";
-          wp = "default3.png";
-          owner = "id3v1669";
-          sleeptimeout = 1200;
-        };
-        brightnesctrl = {
-          up = "light -A 5";
-          down = "light -U 5";
-        };
-        gpuvar = {
-          type = "amd";
-          tech = "amd";
-        };
-      };
-      l14g3kde = mkSystem {
-        hostname = "l14g3";
-        envir = "KDE";
-        cpuvar = {
-          type = "amd";
-          hasIntegrated = true;
-          integratedBroken = false;
-        };
-        bootloader = {
-          type = "opencore";
-          timeout = 7;
-        };
-        desk = "laptop";
-        uservars = {
-          name = "user";
-          description = "id3v1669";
-          domain = "none";
-          wp = "default3.png";
-          owner = "id3v1669";
-          sleeptimeout = 1200;
-        };
-        brightnesctrl = {
-          up = "light -A 5";
-          down = "light -U 5";
-        };
-        gpuvar = {
-          type = "amd";
-          tech = "amd";
-        };
-      };
-      srvcon400 = mkSystem {
-        hostname = "srvcon400";
-        envir = "none";
-        desk = "server";
-        bootloader = {
-          type = "grub";
-          timeout = 1;
-          device = "/dev/sda";
-        };
-        gpuvar = {
-          type = "none";
-          tech = "none";
-        };
-        uservars = {
-          name = "srvcon400user";
-          description = "SrvCon400";
-          domain = "id3v1669.com";
-          owner = "id3v1669";
-        };
-        deflocale = {
-          kblayout = "au";
-          kbvariant = "";
-          kboption = "";
-          timezone = "Australia/Perth";
-          locale = "en_AU.UTF-8";
+          type = "nvidia";
+          tech = "prime";
         };
       };
     };
